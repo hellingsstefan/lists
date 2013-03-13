@@ -1,0 +1,61 @@
+{
+	"Application": {
+		"Loader": {
+			"name":		"Loader",
+			"location":	"Application/Loader.php",
+			"load": {
+				"WebLab_Exception::reporting": 	true,
+				"WebLab_Util_ShortHands::init": true,
+				"WebLab_Loader_AddIn::init":	true,
+				"environment":					true,
+				"controlDispatcher":			true,
+				"shutdown":						true
+			},
+			
+			"includePaths": [
+				"Application",
+				"Application/Plugin"
+			]
+		},
+		
+		"Modules": {
+			"Aliasses": {
+				"":			"Index"
+			},
+			"Dispatcher": {
+				"Visit": {
+					"default":	"404",
+					"prefix": "Control"
+				}
+			}
+		},
+		
+		"Data": {
+			"DB": {
+				"main": {
+					"auto":			false,
+					"type":			"MySQLi",
+					"username":		"root",
+					"password":		"usbw",
+					"host":			"localhost",
+					"database":		"lists",
+					"port":			"3307",
+					"prefix":		"lists_"
+				}
+			}
+		},
+		
+		"Templates": {
+			"directory":		"Application/Template",
+			"extract_vars": 	true
+		},
+
+		"Error": {
+			"reporting": 30719
+		},
+
+		"Security": {
+			"disable_errors": true
+		}
+	}
+}
